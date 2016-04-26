@@ -2,6 +2,8 @@
 
 use Illuminate\Database\Seeder;
 
+include __DIR__ . "/UsersTableSeeder.php";
+
 class DatabaseSeeder extends Seeder
 {
     /**
