@@ -13,6 +13,8 @@ class DatabaseSeeder extends Seeder
     {
         Eloquent::unguard();
 
+        include __DIR__."/UsersTableSeeder.php";
+
         (new UsersTableSeeder())->run();
 
     }
