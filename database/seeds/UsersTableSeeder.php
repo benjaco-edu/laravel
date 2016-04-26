@@ -1,5 +1,4 @@
 <?php
-use Illuminate\Database\Seeder;
 
 /**
  * Created by PhpStorm.
@@ -7,7 +6,7 @@ use Illuminate\Database\Seeder;
  * Date: 26-04-2016
  * Time: 22:18
  */
-class  UsersTableSeeder extends Seeder{
+class UsersTableSeeder extends Seeder{
 
     /**
      * Run the database seeds.
