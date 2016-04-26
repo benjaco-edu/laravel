@@ -17,7 +17,6 @@ class UsersTableSeeder extends Seeder{
      */
     public function run()
     {
-        // TODO: Implement run() method.
         DB::table('users')->delete();
 
         $users = array(
