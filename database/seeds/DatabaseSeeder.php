@@ -11,8 +11,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        Eloquent::unguard();
 
+
+        include __DIR__."/../../bootstrap/autoload.php";
         include __DIR__."/UsersTableSeeder.php";
 
         (new UsersTableSeeder())->run();
