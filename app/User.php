@@ -23,4 +23,10 @@ class User extends Authenticatable
     protected $hidden = [
         'password'
     ];
+    
+    
+    public function items(){
+        // todo ret mig
+        return $this->hasMany("Items", "owner_id");
+    }
 }
