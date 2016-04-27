@@ -11,11 +11,10 @@
 |
 */
 
-use App\Http\Middleware\Authenticate;
 
 
 Route::get('/', array('as'=>'home', 'uses' => 'HomeController@getIndex'));
 
-Route::get('/login', array('as'=>"login", 'middleware'=>"Authenticate", 'uses'=>'AuthController@getLogin'));
+Route::get('/login', array('as'=>"login", 'middleware'=>"auth", 'uses'=>'AuthController@getLogin'));
 
 Route::post('login', array('uses'=>'AuthController@postLogin'));
