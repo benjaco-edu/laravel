@@ -158,6 +158,8 @@ return [
         App\Providers\RouteServiceProvider::class,
         
         'Collective\Html\HtmlServiceProvider',
+        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
+
     ],
 
     /*
