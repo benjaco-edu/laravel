@@ -9,10 +9,4 @@
     <input type="password" name="password" placeholder="Password">
     <input type="submit" value="Login">
     {{ Form::close()  }}
-
-
-
-    @foreach($items as $item)
-        {{$item->name}}<br>
-    @endforeach
 @stop
