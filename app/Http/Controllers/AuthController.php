@@ -16,7 +16,7 @@ use Illuminate\Foundation\Auth\Access\AuthorizesResources;
 class AuthController extends BaseController {
 
     public function getLogin(){
-        return \View::make('home');
+        return \View::make('login');
     }
 
     public function postLogin(){
