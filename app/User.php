@@ -26,7 +26,6 @@ class User extends Authenticatable
     
     
     public function items(){
-        // todo ret mig
-        return $this->hasMany("Items", "owner_id");
+        return $this->hasMany("Items");
     }
 }
