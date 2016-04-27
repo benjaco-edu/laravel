@@ -15,6 +15,7 @@ class UsersSetNameToUsername extends Migration
         //
         Schema::table('users', function(Blueprint $t){
             $t->renameColumn("name", "username");
+            
         });
     }
 
