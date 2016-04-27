@@ -26,6 +26,6 @@ class User extends Authenticatable
     
     
     public function items(){
-        return $this->hasMany("Items");
+        return $this->hasMany("Item");
     }
 }
