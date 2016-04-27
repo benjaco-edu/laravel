@@ -27,5 +27,17 @@ class AuthController extends BaseController {
         if ($validator->fails()) {
             return \Redirect::route("login")->withErrors($validator);
         }
+        $auth = \Auth::attempt([
+            'username' => \Input::get('username'),
+            'password' => \Input::get('password'),
+        ], false);
+
+        if (!$auth) {
+            return \Redirect::route("login")->withErrors([
+                "Forkert login"
+            ]);
+        }
+
+        return \Redirect::route("home");
     }
 }
