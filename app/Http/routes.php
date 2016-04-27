@@ -11,7 +11,7 @@
 |
 */
 
-use App\Http\Middleware;
+use App\Http\Middleware\Authenticate;
 
 
 Route::get('/', array('as'=>'home', 'uses' => 'HomeController@getIndex'));
