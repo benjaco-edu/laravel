@@ -11,6 +11,7 @@
 |
 */
 
+use App\Http\Middleware;
 
 
 Route::get('/', array('as'=>'home', 'uses' => 'HomeController@getIndex'));
