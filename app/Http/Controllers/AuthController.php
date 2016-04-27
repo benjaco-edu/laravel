@@ -6,14 +6,26 @@
  * Time: 08:48
  */
 
+namespace App\Http\Controllers;
+use Illuminate\Foundation\Bus\DispatchesJobs;
+use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Foundation\Validation\ValidatesRequests;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Illuminate\Foundation\Auth\Access\AuthorizesResources;
 
 class AuthController extends BaseController {
 
     public function getLogin(){
-        return View::make('login');
+        return \View::make('login');
     }
 
     public function postLogin(){
-        
+        $validator = \Validator::make(\Input::all(), [
+            'username'=>"required",
+            'password'=>"required"
+        ]);
+        if ($validator->fails()) {
+            return \Redirect::route("login")->withErrors($validator);
+        }
     }
 }
