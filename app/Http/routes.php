@@ -13,8 +13,11 @@
 
 
 
-Route::get('/', array('as'=>'home', 'uses' => 'HomeController@getIndex'));
+Route::get('/', array('as'=>'home', 'uses' => 'HomeController@getIndex'))->middleware('auth');
 
-Route::get('/login', array('as'=>"login", 'uses'=>'AuthController@getLogin'))->middleware('guest');
+Route::get('/login', array('as'=>"login", 'uses'=>'AuthController@getLogin'))
+    ->middleware('guest');
 
-Route::post('login', array('uses'=>'AuthController@postLogin'))->middleware("csrf");
+Route::post('login', array('uses'=>'AuthController@postLogin'))
+    ->middleware("csrf");
+
