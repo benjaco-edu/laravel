@@ -15,7 +15,7 @@ use Illuminate\Foundation\Auth\Access\AuthorizesResources;
 
 class AuthController extends BaseController {
 
-    public function getIndex(){
+    public function getLogin(){
         return \View::make('home');
     }
 
