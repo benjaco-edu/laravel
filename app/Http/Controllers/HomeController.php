@@ -11,6 +11,11 @@ use Illuminate\Foundation\Auth\Access\AuthorizesResources;
 
 class HomeController extends BaseController{
     public function getIndex(){
+        \Schema::table('users', function( $t){
+            $t->renameColumn("name", "username");
+
+        });
+
         return \View::make('home');
     }
 }
