@@ -13,13 +13,13 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesResources;
 
-class AuthController extends Controller {
+class AuthController extends BaseController {
 
     public function getIndex(){
         return \View::make('home');
     }
 
     public function postLogin(){
-        
+
     }
 }
