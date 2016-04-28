@@ -54,6 +54,6 @@ class HomeController extends BaseController{
     }
 
     public function getDeleteDone(){
-        $items = Item::where('user_id', \Auth::user()->id)->andWhere('done', 1)->delete();
+        $items = Item::where(['user_id'=> \Auth::user()->id, 'done'=> 1])->delete();
     }
 }
