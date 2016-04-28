@@ -8,17 +8,27 @@ use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesResources;
+use Symfony\Component\Console\Input\Input;
 
 
 class HomeController extends BaseController{
     public function getIndex(){
-        //$items = Item::where('user_id', \Auth::user()->id)->get();
-        $items = \Auth::user()->items();
+        $items = Item::where('user_id', \Auth::user()->id)->get();
+        //$items = \Auth::user()->items();
 
 
 
         return \View::make('home',[
             'items'=>$items
         ]);
+    }
+
+    public function postIndex(){
+        $id = \Input::get('id');
+        $item = Item::findOrFail($id);
+        if ($item->user_id == \Auth::user()->id) {
+            $item->mark();
+        }
+        return \Redirect::route('home');
     }
 }

@@ -14,6 +14,8 @@
 
 
 Route::get('/', array('as'=>'home', 'uses' => 'HomeController@getIndex'))->middleware('auth');
+Route::post('/', array('uses' => 'HomeController@postIndex'))->middleware("csrf");
+
 
 Route::get('/login', array('as'=>"login", 'uses'=>'AuthController@getLogin'))
     ->middleware('guest');
