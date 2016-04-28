@@ -16,6 +16,7 @@ class HomeController extends BaseController{
     public function getIndex(){
         $items = \Auth::user()->items();
 
+        var_dump($items);
 
         return \View::make('home',[
             'items'=>$items
