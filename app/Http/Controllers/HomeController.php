@@ -12,8 +12,11 @@ use Illuminate\Foundation\Auth\Access\AuthorizesResources;
 
 class HomeController extends BaseController{
     public function getIndex(){
-        $items = Item::where('user_id', \Auth::User()->id);
+        $items = Item::where('user_id', \Auth::user()->id);
 
+        var_dump($items);
+        var_dump(\Auth::user()->id);
+        var_dump(\Auth::user()->items());
 
         return \View::make('home',[
             'items'=>$items
