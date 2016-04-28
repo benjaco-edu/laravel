@@ -13,6 +13,7 @@ use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesResources;
+use Symfony\Component\Console\Input\Input;
 
 class AuthController extends BaseController {
 
@@ -54,7 +55,7 @@ class AuthController extends BaseController {
             "password_gentag"=>"required|same:password"
         ]);
         if ($validator->fails()) {
-            return \Redirect::route("new_user")->withErrors($validator);
+            return \Redirect::route("new_user")->withErrors($validator)->withInput(\Input::only("username"));
         }
         $user = new User();
         $user->username = \Input::get("username");
