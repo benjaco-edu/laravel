@@ -27,3 +27,6 @@ Route::get('/login', array('as'=>"login", 'uses'=>'AuthController@getLogin'))
 Route::post('login', array('uses'=>'AuthController@postLogin'))
     ->middleware(["csrf", 'guest']);
 
+
+Route::get('/new_user', array('as' => "new_user", "uses" => "AuthController@getNewUser"))->middleware('guest');
+Route::post('/new_user', array("uses" => "AuthController@postNewUser"))->middleware(["csrf",'guest']);
