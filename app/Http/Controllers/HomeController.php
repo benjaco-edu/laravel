@@ -14,7 +14,7 @@ use Symfony\Component\Console\Input\Input;
 
 class HomeController extends BaseController{
     public function getIndex(){
-        $items = \Auth::user()->items();
+        $items = \Auth::user()->items()->get();
 
         var_dump($items);
 
