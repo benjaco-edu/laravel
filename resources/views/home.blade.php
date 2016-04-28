@@ -13,10 +13,11 @@
             <input type="checkbox" name="item"
                    onclick="this.form.submit()"
                    value="" {{ $item->done? 'checked':'' }} >
-            {{$item->name}}
+            {{ e($item->name) }}
             {{ Form::close() }}
         </li>
     @endforeach
     </ul>
+    <a href="{{URL::route("delete_done")}}">Fjern færdige</a>
 
 @stop

@@ -52,4 +52,8 @@ class HomeController extends BaseController{
         return \Redirect::route("home");
 
     }
+
+    public function getDeleteDone(){
+        $items = Item::where('user_id', \Auth::user()->id)->andWhere('done', 1)->delete();
+    }
 }
