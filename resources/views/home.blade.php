@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <h1>Items</h1>
+    <h1>Items <a href="{{URL::route("new")}}">Add</a></h1>
 
     <ul>
 
