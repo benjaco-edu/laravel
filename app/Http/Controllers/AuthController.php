@@ -49,9 +49,9 @@ class AuthController extends BaseController {
     public function postNewUser()
     {
         $validator = \Validator::make(\Input::all(), [
-            "username"=>"unique:users",
-            "password"=>"min:5",
-            "password_gentag"=>"same:password"
+            "username"=>"required|unique:users",
+            "password"=>"required|min:5",
+            "password_gentag"=>"required|same:password"
         ]);
         if ($validator->fails()) {
             return \Redirect::route("new_user")->withErrors($validator);
