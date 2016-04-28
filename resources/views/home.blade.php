@@ -1,6 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
+    <a href="{{ URL::route("logud")  }}">Logud</a>
 
     <h1>Items <a href="{{URL::route("new")}}">Add</a></h1>
 

@@ -1,6 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
+    <a href="{{ URL::route("home")  }}">Tilbage</a>
     <h1>Opret bruger</h1>
     @foreach($errors->all() as $error)
         <p class="error">{{$error}}</p>

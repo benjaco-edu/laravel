@@ -67,4 +67,9 @@ class AuthController extends BaseController {
         ], false);
         return \Redirect::route("home");
     }
+
+    public function getLogud(){
+        \Auth::logout();
+        return \Redirect::route("home");
+    }
 }
