@@ -17,7 +17,7 @@ class HomeController extends BaseController{
         var_dump($items);
 
         var_dump(\Auth::user());
-        var_dump(\Auth::user()->items());
+        var_dump(\Auth::user()->items);
 
         return \View::make('home',[
             'items'=>$items
