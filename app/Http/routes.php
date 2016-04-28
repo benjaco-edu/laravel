@@ -19,7 +19,7 @@ Route::post('/', array('uses' => 'HomeController@postIndex'))->middleware(["csrf
 Route::get('/new', array("as" => 'new', 'uses' => "HomeController@getNew"))->middleware('auth');
 Route::post('/new', array('uses' => "HomeController@postNew"))->middleware(["csrf",'auth']);
 
-Route::get("/delete_done", array("as"=>'delete_done', 'uses' => "AuthController@getDeleteDone"))->middleware('auth');
+Route::get("/delete_done", array("as"=>'delete_done', 'uses' => "HomeController@getDeleteDone"))->middleware('auth');
 
 Route::get('/login', array('as'=>"login", 'uses'=>'AuthController@getLogin'))
     ->middleware('guest');
