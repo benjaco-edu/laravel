@@ -3,6 +3,7 @@
 
 namespace App\Http\Controllers;
 use App\Item;
+use App\User;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -13,9 +14,7 @@ use Symfony\Component\Console\Input\Input;
 
 class HomeController extends BaseController{
     public function getIndex(){
-        $items = Item::where('user_id', \Auth::user()->id)->get();
-        //$items = \Auth::user()->items();
-
+        $items = \Auth::user()->items();
 
 
         return \View::make('home',[
